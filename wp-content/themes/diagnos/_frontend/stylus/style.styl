@@ -1,0 +1,267 @@
+@import 'utils.styl'
+
+$blue = #5fcdfb
+$light_blue = #a6cbda
+
+$purple = #aa95fb
+$orange = #fba55f
+$pink = #fb5f79
+
+$text = #424a57
+
+$footer_bg = #d3d7dd
+$footer_title = #738094
+
+$font = 'Raleway'
+
+h1,h2,h3,h4,h5,h6,p,hr,label,legend,fieldset,address{
+	margin 0
+	padding 0
+	border 0
+}
+
+.vatxt
+	position relative
+
+colorScheme($c)
+	header
+		menu
+			background $c
+			.menu_icon
+				background $c
+		.holder:before
+			background $c
+	main
+		form
+			label:before
+				background $c 
+			button[type=submit]
+				background $c
+
+body
+	font-family $font, sans-serif
+	font-weight normal
+	a
+		&:hover, &:focus
+			text-decoration none
+			outline 0
+	
+	header
+		block-relative()
+		z-index 10
+		min-height 147px
+		margin-bottom 18px
+		.holder
+			block-relative()
+			min-height 147px
+			img
+				margin-top 21px
+				margin-left 20px
+			.search
+				block-relative()
+				padding-top 41px
+				form
+					block-relative()
+					margin-left 43px
+					.field
+						padding-right 0
+						input
+							block-relative()
+							dimensions(100%, 46px, #f3f3f3)
+							roundborder(0)
+							border 0
+							box-shadow none
+					.button
+						padding-left 0
+						button
+							block-relative()
+							dimensions(64px, 46px, #c6e5a7 image('magnifier.png') center no-repeat)
+							text-indent -99999px
+							border 0
+			&:before
+				block-absolute()
+				dimensions(100%, 3px, gray)				
+				left 0
+				bottom -3px
+						
+							
+		menu
+			block-absolute()
+			dimensions(100%, 5px/*112px*/, gray)
+			transition(all, .2s, ease-out)
+			top 0
+			left 0 
+			.menu-holder
+				block-relative()
+				height 5px
+				.links
+					block-relative()
+					dimensions(100%, 100%)
+					transition(all, .2s, ease-out)
+					overflow hidden
+				img
+					block-relative()
+					margin-top 21px
+					margin-left 20px
+				ul
+					block-relative()
+					margin-left 17px
+					margin-top 35px
+					li
+						block-relative-left()
+						width 140px
+						a
+							set_font($font, 17px, 20px, black)
+							opacity(.3)
+							font-weight 500
+							&:hover, &:focus
+								color white
+								text-decoration none
+								opacity(1)
+						&.current_page_item, &.current-page-ancestor
+							a
+								color white
+								opacity(1)
+			.toggle
+				block-absolute()
+				width 100%
+				.menu_icon
+					block-absolute()
+					dimensions(44px, 37px, gray)
+					cursor pointer
+					bottom -37px
+					right 0
+					.line
+						block-absolute()
+						dimensions(20px, 2px, white)
+						top 0
+						left 12px
+						&:nth-child(1)
+							top 9px							
+						&:nth-child(2)
+							top 14px
+						&:nth-child(3)
+							top 19px
+		
+	main
+		block-relative()
+		form
+			label
+				relative()
+				set_font($font, 16px, auto, $text)
+				margin-top 1px
+				padding-bottom 7px
+				font-weight 700
+				&:before
+					relative()
+					dimensions(2px, 15px, red)
+					top 2px
+					display inline-block
+					margin-right 5px
+					content ""
+			
+			.chkbx
+				block-relative()
+				padding-top 35px
+
+			.form-control
+				roundborder(0)
+				box-shadow none
+				border 0
+				background-color #ebebec
+				&[type=text]
+					height 39px
+					
+			button
+				dimensions(100%, 39px, #d4d4d4)
+				set_font($font, 16px, 39px, $title, center)
+				border 0
+				font-weight 500
+			
+			.btn-holder
+				padding-top 31px
+			
+			button[type=submit]
+				dimensions(auto, 63px, red)
+				set_font($font, 28px, 62px, white, center)
+				margin-top 11px
+				padding 0 29px
+				font-weight 500
+				border 0
+	footer
+		block-relative()
+		margin-top 80px
+		width 100%
+		background-color $footer_bg
+		min-height 255px
+		h3
+			block-relative()
+			set_font($font, 25px, auto, $footer_title)
+			padding-top 67px
+			padding-bottom 8px
+			&:before
+				block-absolute()
+				dimensions(100%, 3px, $footer_title)
+				left 0
+				bottom 0
+				content ""
+		p
+			block-relative()
+			set_font($font, 14px, 17px, $text)
+			padding-top 9px
+		img,video
+			width 310px
+			margin-top -31px
+
+@media all and (max-width: 769px)
+	body 
+		header 
+			min-height 90px
+			.holder
+				min-height 90px
+				padding 0 
+				img
+					block()
+					width 160px
+					margin-left auto
+					margin-right auto
+				.search form .field input
+					max-width 100
+			menu 
+				.menu-holder 
+					.links
+						margin-left 0
+					img
+						margin-left auto
+						margin-right auto
+						width 160px
+					ul 
+						margin-left 0
+						padding-bottom 40px
+						li 
+							float none
+							width 100%
+							text-align center
+							a
+								width 100%
+								font-size 18px
+								line-height 30px
+		footer
+			.container
+				padding 0
+				h3
+					padding-top 18px
+				p
+					padding-bottom 18px
+				img,video
+					block()
+					margin 20px auto 0 auto
+					max-width 100%
+					
+	
+
+@import 'modules/home.styl'
+@import 'modules/atendimento.styl'
+@import 'modules/a_diagnos.styl'
+@import 'modules/solucoes_diagnos.styl'
+@import 'modules/central_de_relacionamento.styl'

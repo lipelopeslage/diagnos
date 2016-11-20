@@ -1,0 +1,207 @@
+body.atendimento
+	$session_color = $orange
+	
+	colorScheme($session_color)
+	
+	main
+		.nav:not(.nav-tabs)
+			margin-bottom 30px
+			a
+				opacity(.5)
+				span
+					block-relative()
+					set_font($font, 25px, 114px, white, center)
+					font-weight 300
+					height 114px
+					background-color $orange			
+				&:first-child
+					padding-left 0				
+				&:last-child
+					padding-right 0
+				&:nth-child(2)
+					padding-left 0
+					padding-right 0
+				&:hover
+					text-decoration none
+				&.selected
+					opacity(1)
+					span
+						font-weight 500
+					&:before
+						block-absolute()
+						dimensions(0, 0)
+						left 50%
+						margin-left -10px
+						bottom -10px
+						border-style solid
+						border-width 10px 10px 0 10px;
+						border-color $session_color transparent transparent 
+						content ""
+
+		hr
+			background-color $session_color
+			height 3px
+			margin-top 31px
+			margin-bottom 20px
+			
+		h2
+			set_font($font, 18px, auto, $text)	
+			padding-top 36px
+			padding-bottom 8px
+			font-weight 500
+		
+		p
+			padding-top 2px
+			padding-bottom 15px
+			line-height 16px
+			
+		ul.multi-column
+			li
+				relative()
+				set_font($font, 14px, 17px, $text)	
+				&:before
+					relative()
+					dimensions(5px, 1px, $orange)
+					top -4px
+					display inline-block
+					margin-right 5px
+					content ""
+					
+	&.agendamento-online
+		main
+			.nav-tabs
+				margin-bottom 20px
+				border 0
+				li
+					a
+						set_font($font, 16px, 19px, #a6a4a4, center)
+						roundborder(0)
+						background-color #d4d4d4
+						padding 13px 27px
+						font-weight 500
+						border 0
+						box-shadow none
+					&.active
+						a
+							background #a6a4a4
+							color white
+							&:before
+								block-absolute()
+								dimensions(0, 0)
+								left 50%
+								margin-left -10px
+								bottom -10px
+								border-style solid
+								border-width 10px 10px 0 10px;
+								border-color #a6a4a4 transparent transparent 
+								content ""
+					&:first-child
+						margin-right 10px
+			h3
+				block-relative()
+				set_font($font, 30px, auto, $session_color)			
+				padding-bottom 10px
+				margin-top 14px
+				&:before
+					block-absolute()
+					dimensions(100%, 3px, $session_color)
+					bottom 0
+					left 0
+					content ""
+						
+			p
+				block-relative()
+				set_font($font, 18px, 21px, $text)
+				padding-top 13px
+				font-weight 500	
+				
+	&.servicos
+		main
+			.nav-tabs
+				margin-top 42px
+				border 0
+				li
+					opacity(.7)
+					margin-right 3px
+					a
+						set_font($font, 16px, 19px, white)
+						roundborder(0)
+						transition(all, .05s, ease-out)
+						font-weight 300 !important
+						min-height 57px
+						max-width 184px
+						font-weight 500
+						background-color $session_color
+						padding 0
+						padding-left 69px
+						padding-right 9px
+						border 0
+							
+						&:before
+							block-absolute()
+							dimensions(38px, 40px, image('sprite_atendimento.png') no-repeat)
+							left 18px
+							top 9px
+							content ""
+							
+						&[aria-controls="testes"]:before
+							background-position 0 -186px							
+						&[aria-controls="paaf"]:before
+							background-position 0 -139px
+						&[aria-controls="imuno"]:before
+							background-position 1px -51px
+						&[aria-controls="citopatologia"]:before
+							background-position 1px -91px
+					&.active
+						opacity(1)
+						a
+							font-weight 500 !important
+							padding-right 10px
+						
+							
+							
+			.tab-content
+				block-relative()
+				margin-top 13px
+				&:before
+					block-absolute()
+					dimensions(3px, 100%, $session_color)
+					top 0
+					left 0
+					content ""
+				>div
+					padding 32px 14px
+					content ""
+					
+
+@media all and (max-width: 769px)
+	body.atendimento
+		main 
+			.nav:not(.nav-tabs) a 
+				block-relative()
+				padding-right 0
+				padding-left 0
+				&:before
+					none()
+				span
+					height 42px
+					font-size 16px
+					line-height 42px
+		&.agendamento-online
+			main 
+				.nav-tabs
+					li:first-child
+						margin-right 0
+				h3
+					margin-top 45px
+				ul#form-types.nav-tabs li a
+						padding 7px 27px
+						font-size 14px
+						line-height 17px
+		&.servicos
+			ul.nav-tabs
+				li
+					block()
+					float none
+					a
+						max-width 100%

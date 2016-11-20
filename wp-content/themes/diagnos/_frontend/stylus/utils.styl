@@ -1,0 +1,114 @@
+$gray = #383838
+$gray_text = #2e2e2e
+$blue = #0214d6
+$yellow= #fdeb29
+$input_bg = #5b5b5b
+$input_placeholder = #738094
+
+::-webkit-input-placeholder {
+   color: $input_placeholder !important;
+}
+
+:-moz-placeholder {
+   color: $input_placeholder !important;
+}
+
+::-moz-placeholder {
+   color: $input_placeholder !important;
+}
+
+:-ms-input-placeholder {  
+   color: $input_placeholder !important;
+}
+roundborder(x)
+	-moz-border-radius x
+	-webkit-border-radius x
+	border-radius x
+
+unselectable()
+	-moz-user-select -moz-none
+	-khtml-user-select none
+	-webkit-user-select none
+
+selectable()
+	-moz-user-select -moz-text
+	-khtml-user-select text
+	-webkit-user-select text
+
+set_font(ff = opensans_regular, fz = 10, lh = auto, c = black, ta = none, tt = none)
+	font-family ff
+	font-size fz
+	line-height lh
+	color c
+	text-align ta
+	text-transform tt
+
+dimensions(w = 40px, h = 40px, bg = transparent)
+	width w
+	height h
+	background bg
+
+none()
+	display none
+
+inline()
+	display inline
+	
+block()
+	display block
+	
+absolute()
+	position absolute
+
+relative()
+	position relative
+
+fixed()
+	position fixed
+	
+block-relative()
+	block()
+	relative()
+
+block-relative-left()
+	block()
+	relative()
+	float left
+	
+block-relative-right()
+	block()
+	relative()
+	float right
+
+
+block-absolute()
+	block()
+	absolute()
+	
+image(src)
+	url('../../assets/image/'+src)
+	
+antialiased()
+	-moz-font-smoothing antialiased
+	-webkit-font-smoothing antialiased	
+	
+prefix(what, args...)
+	-webkit-{what} args
+	-moz-{what} args
+	{what} args
+	
+transition(args...)
+	prefix('transition', args)
+	
+transform(args...)
+	prefix('transform', args)
+
+opensans(fz = 10, lh = auto, c = white, ta = none, tt = none)
+	set_font('Open Sans', fz, lh, c, ta, tt)
+	
+support-for-ie ?= true
+
+    opacity(n)
+      opacity n
+      if support-for-ie
+        filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')

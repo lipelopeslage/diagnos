@@ -1,0 +1,108 @@
+body.solucoes-diagnos
+	$session_color = $blue
+	
+	colorScheme($session_color)
+	
+	main
+		visibility hidden
+		#links
+			block-relative()
+			img
+				none()
+			li
+				block-relative()
+				margin-bottom 2px
+				a
+					block-relative()
+					set_font($font, 25px, 60px, white)
+					transition(all, .3s, ease-out)
+					opacity(.65)
+					padding-left 25px
+					height 61px
+					font-weight 300
+					background-color $session_color
+					&:before
+						block-absolute()
+						dimensions(0, 0)
+						transition(all, .3s, ease-out)
+						right 1px
+						top 30px
+						border-style solid
+						border-width 0 0 0 0;
+						border-color transparent transparent transparent $session_color
+						line-height 0px
+						_border-color #000000 #000000 #000000 $session_color
+						//_filter progid:DXImageTransform.Microsoft.Chroma(color='#000000')
+						content ""
+				&.selected a
+					set_font($font, 46px, 472px, white)
+					opacity(1)
+					font-weight 700
+					height 292px
+					&:before
+						block-absolute()
+						dimensions(0, 0)
+						right -9px
+						top 30px
+						border-style solid
+						border-width 11px 0 11px 11px;
+						border-color transparent transparent transparent $session_color
+						line-height 0px
+						_border-color #000000 #000000 #000000 $session_color
+						//_filter progid:DXImageTransform.Microsoft.Chroma(color='#000000')
+						content ""
+					
+		#images
+			block-relative()
+			li
+				block-absolute()
+				dimensions(0, auto)
+				transition(all, .6s, ease-in-out)
+				z-index 0
+				right 0
+				overflow hidden
+				img
+					block-relative()
+					margin 0 -25%
+					left 45%
+				&.selected
+					right auto
+					left 0
+					z-index 1
+					width 100%
+					
+		#descriptions
+			block-relative()
+			margin-top 14px
+			li
+				block-absolute()
+				opacity(0)
+				transition(all, .4s, linear, .1s)
+				&.selected
+					opacity(1)
+			p
+				block-relative()
+				line-height 16px
+				
+
+
+
+@media all and (max-width: 769px)				
+	body.solucoes-diagnos
+		main #links 
+			li
+				a
+					font-size 16px
+					line-height 48px
+					height 48px
+				&.selected a
+					line-height 69px
+					height 72px
+		ul#descriptions
+			p
+				font-size 13px	
+		ul#images
+			li img
+				left 0
+				margin 0 auto
+				max-width 100%

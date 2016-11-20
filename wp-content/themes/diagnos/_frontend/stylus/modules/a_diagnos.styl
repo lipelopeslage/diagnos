@@ -1,0 +1,21 @@
+body.a-diagnos
+	$session_color = $purple
+	
+	colorScheme($session_color)
+	
+	.container-fluid .container .row:first-child h2
+		margin-top 0
+		&:before
+			none()
+	h2
+		set_font($font, 30px, auto, $session_color)
+		margin-top 21px
+		font-weight 700
+		padding-bottom 4px
+		
+		&:before
+			block-relative()
+			dimensions(100%, 3px, $session_color)
+			margin-bottom 10px
+			content ""
+		

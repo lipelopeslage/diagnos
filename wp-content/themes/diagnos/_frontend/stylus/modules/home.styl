@@ -1,0 +1,175 @@
+body.home
+	header .holder:before
+		none()
+	main
+		visibility hidden
+		menu
+			block-relative()
+			dimensions(90%, auto)
+			margin 0 auto
+			ul
+				block-relative()
+				height 100%
+				>li
+					block-absolute()
+					text-align center
+					img
+						block-relative()
+						margin 0 auto 20px auto
+					>a
+						block-relative()
+						width 100%
+						set_font($font, 18px, 21px, red)
+						font-weight 500
+						cursor default
+					&:nth-child(1)	
+						a
+							color $blue
+					&:nth-child(2)	
+						a
+							color $purple
+					&:nth-child(3)	
+						a
+							color $orange
+					&:nth-child(4)	
+						a
+							color $pink
+					&.selected 
+						>a
+							font-size 27px
+							line-height 33px
+							cursor pointer
+						.sub
+							block()
+			.arrow-nav
+				block-absolute()
+				dimensions(23px, 39px, image('home/arrows.png'))
+				z-index 5
+				cursor pointer
+				text-indent -9999px
+				top 50%
+				margin-top -19px
+				left -5%
+				&.next
+					background-position -36px 0
+					left auto
+					right -5%
+			&.motion
+				ul>li
+					transition(all, .7s, ease-in-out)
+					>a
+						transition(all, .3s, linear, .3s)
+					/*&:nth-child(1)	
+						prefix(transition-delay, .05s)
+					&:nth-child(2)	
+						prefix(transition-delay, .1s)
+					&:nth-child(3)	
+						prefix(transition-delay, .15s)
+					&:nth-child(4)	
+						prefix(transition-delay, .2s)*/
+			.sub
+				block-absolute()
+				none()
+				width 100%
+				li
+					relative()
+					display inline-block
+			
+		#descriptions
+			block-relative()
+			margin-top 29px
+			p
+				block-absolute()
+				set_font($font, 25px, auto, $footer_title, center)
+				opacity(0)
+				transition(opacity, .4s, linear, .1s)
+				width 100%
+				font-weight 500
+				span
+					block-relative()
+					max-width 500px
+					margin 0 auto
+				&.selected
+					opacity(1)
+
+		#sublinks
+			block-relative()
+			margin-top 47px
+			ul
+				block-absolute()
+				opacity(0)
+				transition(opacity, .4s, linear, .1s)
+				visibility hidden
+				z-index 0
+				width 100%				
+				text-align center
+				li
+					relative()
+					display inline-block			
+					margin-left 50px
+					&:before
+						margin-left 0
+					a
+						block-relative()
+						set_font($font, 20px, auto, red)						
+						font-weight 500
+						&:before
+							dimensions(0, 4px, red)
+							transition(all, .2s, ease-out)
+							left 50%
+							bottom -6px
+							content ""
+						&:hover
+							&:before
+								block-absolute()
+								width 100%
+								left 0%
+								
+				&.selected
+					opacity(1)
+					z-index 1
+					visibility visible
+					
+				&[data-idx="2"]
+					a
+						color $orange
+						&:before
+							background $orange
+							
+				&[data-idx="3"]
+					a
+						color $pink
+						&:before
+							background $pink
+
+@media all and (max-width: 769px)
+	body.home main
+		menu
+			ul
+				>li
+					opacity(.1 !important)
+					>a
+						font-size 14px
+						line-height 16px
+						img
+							width 100px
+					&.selected
+						opacity(1 !important)
+						a
+							font-size 17px
+							line-height 20px
+		#descriptions
+			p
+				font-size 15px
+				
+		#sublinks
+			margin-top 10px
+			ul
+				li
+					block()
+					text-align center
+					margin-left 0
+					a
+						font-size 15px
+						line-height 30px
+					

@@ -1,0 +1,28 @@
+{
+  "name": "mumin",
+  "version": "0.0.1",
+  "description": "Website for Mumin",
+  "author": "Felipe Lopes Lage <felipelopeslage@hotmail.com>",
+  "main": "js/main.js",
+  "keywords": [
+    "commonjs",
+    "react",
+    "babel",
+    "babel-preset-react",
+    "es5",
+    "jsx",
+    "webpack"
+  ],
+  "dependencies": {
+    "bootstrap": "*"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.1",
+    "url-loader": "*",
+    "webpack": "^1.12.14"
+  }
+}

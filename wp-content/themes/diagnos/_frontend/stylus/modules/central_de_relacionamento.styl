@@ -1,0 +1,182 @@
+body.central-de-relacionamento
+	$session_color = $pink
+	
+	colorScheme($session_color)
+	
+	main
+		.nav
+			block-relative()
+			margin-bottom 18px
+			a
+				opacity(.5)
+				relative()
+				float left
+				width (100/5)%
+				span
+					block-relative()
+					set_font($font, 20px, 24px, white, center)
+					margin-left 5px
+					font-weight 300
+					height 75px
+					background-color $session_color			
+				&:first-child span
+					margin-left 0				
+				&:hover
+					text-decoration none
+				&.selected
+					opacity(1)
+					span
+						font-weight 500
+					&:before
+						block-absolute()
+						dimensions(0, 0)
+						left 50%
+						margin-left -10px
+						bottom -10px
+						border-style solid
+						border-width 10px 10px 0 10px;
+						border-color $session_color transparent transparent 
+						content ""
+
+		hr
+			background-color $session_color
+			height 3px
+			margin-top 31px
+			margin-bottom 20px
+			
+		h3
+			block-relative()
+			set_font($font, 30px, auto, $pink)
+			padding-bottom 13px
+			margin-top 53px
+			font-weight 500
+			&:before
+				block-absolute()
+				dimensions(100%, 3px, $pink)
+				left 0
+				bottom 0
+				content ""
+				
+		p.tel
+			set_font($font, 20px, auto, $footer_title)
+			padding-top 15px
+			font-weight 500
+			strong
+				font-size 30px
+				color $pink
+				font-weight 700
+		address
+			margin 8px 0 13px 0
+		form
+			legend
+				block-relative()
+				set_font($font, 14px, 17px, $text)
+				margin-bottom 40px
+				bdi
+					color $session_color
+				a
+					color $session_color
+					font-weight 700
+					
+	&.blog
+		.post-content
+			block-relative()
+			margin-top 13px
+			text-align justify
+			h1
+				set_font($font, 25px, auto, $pink)
+				margin-bottom 2px
+				font-weight 600
+			.post-img
+				float left
+				margin-top 3px
+				margin-right 14px
+				img
+					block-relative()
+					border 0
+				.post-share
+					block-relative()
+					padding 18px
+					background-color #e9e9e9
+					height 56px
+				
+		.blog-post-list
+			block-relative()
+			margin-top 16px
+			li
+				margin-bottom 25px
+				a
+					block-relative()
+					color $text
+					text-decoration none
+					
+					img
+						block-relative()
+						border 0
+						min-width 299px
+						min-height 200px
+						background-color gray
+					h3
+						block-relative()
+						set_font($font, 25px, auto, $pink)
+						padding-bottom 4px
+						font-weight 600
+						margin-top 8px
+						&:before
+							none()
+					p
+						block-relative()
+						line-height 16px
+				&.more
+					
+					a.more-link
+						set_font($font, 25px, 27px, white, center)
+						background-color $pink
+						padding 70px 50px
+						font-weight 600
+						min-width 299px
+						min-height 200px
+					.pagination
+						block-relative()
+						text-align center
+						a
+							relative()
+							display inline-block
+							&.num
+								set_font($font, 18px, 20px, $text)
+								top -8px
+
+							&.prev
+								dimensions(0,0)
+								margin-right 10px
+								border-top 17px solid transparent
+								border-bottom 17px solid transparent
+								border-right 16px solid $pink
+								text-indent -10000px
+							&.next
+								dimensions(0,0)
+								margin-left 10px
+								border-top 17px solid transparent
+								border-bottom 17px solid transparent
+								border-left 16px solid $pink
+								text-indent -10000px
+							&.arr
+								opacity(.6)
+								transition(opacity, .15s, linear)
+								&:hover
+									opacity(1)
+			
+
+@media all and (max-width: 769px)
+	body.central-de-relacionamento
+		main .nav
+			a
+				width 100%
+				span
+					margin-left 0
+					font-size 16px
+					line-height 18px
+					height 55px
+
+
+
